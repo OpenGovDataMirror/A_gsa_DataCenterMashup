@@ -1,0 +1,37 @@
+{
+  "name": "DataCenterMashup",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "pretest": "jshint ."
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "body-parser": "^1.14.1",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "errorhandler": "^1.1.1",
+    "fast-csv": "^0.6.0",
+    "lodash": "^3.10.1",
+    "loopback": "^2.14.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-connector-mysql": "^2.2.0",
+    "loopback-datasource-juggler": "^2.19.0",
+    "mysql": "^2.9.0",
+    "request": "^2.65.0",
+    "serve-favicon": "^2.0.1",
+    "xlsx": "^0.8.0"
+  },
+  "optionalDependencies": {
+    "loopback-explorer": "^1.1.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.6",
+    "loopback-explorer": "^1.8.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "description": "DataCenterMashup"
+}

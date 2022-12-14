@@ -1,0 +1,44 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>{{vm.dataCenter.dataCenterName}}</h1>
+        <ol class="breadcrumb">
+            <li><a ui-sref="app.main"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a ui-sref="app.datacenters.list">Data Centers</a></li>
+            <li class="active">{{vm.dataCenterName}}</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                  <div class="box-body">
+										<table st-table="vm.dataCenterInformations" class="table table-striped">
+											<thead>
+											<tr>
+												<th>Quarter</th>
+												<th>Year</th>
+												<th></th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr ng-repeat="row in vm.dataCenterInformations">
+												<td>{{row.quarter}}</td>
+												<td>{{row.year}}</td>
+												<td><a class="btn btn-primary btn-sm" ui-sref="app.datacenters.datacenter.datacenterinfo.edit({'dataCenterId':vm.dataCenter.id,'dataCenterInfoId':row.id})">Edit</a></td>
+											</tr>
+											</tbody>
+										</table>
+                  </div>
+                  <div class="box-footer">
+                      <a ui-sref="app.datacenters.datacenter.datacenterinfo.create({'dataCenterId':vm.dataCenter.id})" class="btn btn-primary submit-button">Add New Quarterly Data</a>
+                  </div>                  
+                </div>
+                <!-- /.box -->
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </section>
+</div>

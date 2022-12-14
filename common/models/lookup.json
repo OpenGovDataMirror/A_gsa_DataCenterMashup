@@ -1,0 +1,31 @@
+{
+  "name": "Lookup",
+  "plural": "lookup",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "key": {
+      "type": "string",
+      "required": true,
+      "mysql":{
+                  "dataType":"VARCHAR",
+                  "dataLength":4000
+              }
+    },
+    "value": {
+      "type": "string",
+      "required": true,
+      "mysql":{
+            "dataType":"TEXT",
+            "dataLength":4000
+        }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

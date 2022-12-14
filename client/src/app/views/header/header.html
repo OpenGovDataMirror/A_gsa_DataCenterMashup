@@ -1,0 +1,68 @@
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a ui-sref="app.main" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>DC</b>D</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Data Center</b> Manager</span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                <a href="#"><i class="fa fa-user"></i> <span class="hidden-xs"><strong> {{user.name}}</strong></span></a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- search form (Optional) -->
+          <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+          <!-- /.search form -->
+
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu">
+            <li class="header">Main Menu</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li class="active"><a ui-sref="app.main"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li  ng-if="user.role=='admin' || user.role=='report'"><a><i class="fa fa-bar-chart"></i> <span>Reports</span></a>
+              <ul>
+                <li><a href="http://localhost:3000/reports?rptName=omb_inventory&format=xlsx" target="_blank"><i class="fa fa-caret-right"></i> OMB Inventory Report</a></li>
+                <li><a href="http://localhost:3000/reports?rptName=gao_inventory&format=xlsx" target="_blank"><i class="fa fa-caret-right"></i> GAO Inventory Report</a></li>                
+              </ul>
+            </li>          
+            <li ng-if="user.role=='admin'"><a ui-sref="app.datacenters.list"><i class="fa fa-server"></i> <span>Data Centers</span></a></li>
+            <li ng-if="user.role=='admin'"><a ui-sref="app.calculator"><i class="fa fa-calculator"></i> <span>CBA Tool</span></a></li>            
+            <li ng-if="user.role=='staff'"><a href="#"><i class="fa fa-th-list"></i> <span>Staff Entries</span></a></li>
+
+
+            <li class="header">Quick Links</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li ng-if="user.role=='admin' || user.role=='report'"><a href="#"><i class="fa fa-sliders"></i> <span>Create Report</span></a></li>
+            <li ng-if="user.role=='admin'"><a ui-sref="app.datacenters.datacenter.create"><i class="fa fa-plus-square-o"></i> <span>Add Data Center</span></a></li>
+            
+            <li ng-if="user.role=='staff'"><a href="#"><i class="fa fa-edit"></i> <span>New Staff Entry</span></a></li>
+          
+          </ul><!-- /.sidebar-menu -->
+
+        </section>
+        <!-- /.sidebar -->
+      </aside>

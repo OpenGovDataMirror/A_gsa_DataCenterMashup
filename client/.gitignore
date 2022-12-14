@@ -1,0 +1,9 @@
+node_modules/
+bower_components/
+.sass-cache/
+.idea/
+.tmp/
+dist/
+src/app/env.config.js
+IEDriverServer.exe
+phantomjs.exe
